@@ -11,7 +11,7 @@
 						<field name="name" placeholder="Užduotis"/>
 					</h1>
 					<group>
-						<field name="info"/>
+						<field name="info" placeholder="Užduoties aprašas"/>
 					</group>
 					<group>
 						<field name="worker_id" />

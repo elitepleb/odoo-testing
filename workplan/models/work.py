@@ -9,7 +9,7 @@ class Work(models.Model):
     
     #data
     name = fields.Char("Darbo užduotis")
-    info = fields.Text(sting = "Darbo informacija")
+    info = fields.Text(string = "Darbo informacija")
     
     #relationship
-    worker_id = fields.Many2one("res.users")
+    worker_id = fields.Many2one("res.users", string="Darbuotojai")

@@ -20,8 +20,8 @@ class Plan(models.Model):
     finish = fields.Datetime(string="Plano terminas")
     
     #relationship
-    work_ids = fields.Many2many("workplan.work", required=True)
-    leader_id = fields.Many2one("res.partner", required=True)
+    work_ids = fields.Many2many("workplan.work", required=True, string="Darbai")
+    leader_id = fields.Many2one("res.partner", required=True, string="Vadovas")
     
     #functions
     def _expand_states(self, states, domain, order):
