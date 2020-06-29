@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_teashop_tea,access_teashop_tea,model_teashop_tea,base.group_user,1,1,1,1
+access_teashop_customer,access_teashop_customer,model_teashop_customer,base.group_user,1,1,1,1
+access_teashop_order,access_teashop_order,model_teashop_order,base.group_user,1,1,1,1

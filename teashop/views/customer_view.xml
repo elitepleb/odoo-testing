@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record model="ir.ui.view" id="teashop_customer_form">
+		<field name="name">Pirkėjų vaizdas</field>
+		<field name="model">teashop.customer</field>
+		<field name="arch" type="xml">
+			<form string="Pirkėjas">
+				<sheet>
+					<h1>
+						<field name="name" placeholder="Vardas"/>
+					</h1>
+					<notebook>
+						<page string="Užsakimai">
+							<field name="order_ids"/>
+						</page>
+					</notebook>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+</odoo>

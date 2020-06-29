@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem name="Arbatinė" id="teashop_root_menu"/>
+
+    <record model="ir.actions.act_window" id="action_teashop">
+        <field name="name">Arbatos</field>
+        <field name="res_model">teashop.tea</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_teashop_customer">
+        <field name="name">Pirkėjai</field>
+        <field name="res_model">teashop.customer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_teashop_order">
+        <field name="name">Užsakimai</field>
+        <field name="res_model">teashop.order</field>
+	<field name="view_mode">tree,form,kanban</field>
+	<field name="context">{'search_default_group_by_state': 1}</field>
+    </record>
+
+    <menuitem name="Arbatos" id="teashop_tea_menu" parent="teashop_root_menu" sequence="1" action="action_teashop"/>
+
+    <menuitem name="Pirkėjai" id="teashop_customer_menu" parent="teashop_root_menu" sequence="2" action="action_teashop_customer"/>
+
+    <menuitem name="Užsakimai" id="teashop_order_menu" parent="teashop_root_menu" sequence="3" action="action_teashop_order"/>
+
+
+</odoo>

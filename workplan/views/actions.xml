@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	
+    <menuitem name="Darbo planavimas" id="workplan_root_menu"/>
+
+    <record model="ir.actions.act_window" id="action_workplan_plan">
+        <field name="name">Planai</field>
+	<field name="res_model">workplan.plan</field>
+	<field name="view_mode">tree,form,kanban</field>
+	<field name="context">{'search_default_group_by_state': 1}</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_workplan_work">
+        <field name="name">Darbai</field>
+        <field name="res_model">workplan.work</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Planai" id="workplan_plan_menu" parent="workplan_root_menu" sequence="1" action="action_workplan_plan"/>
+    <menuitem name="Darbai" id="workplan_work_menu" parent="workplan_root_menu" sequence="2" action="action_workplan_work"/>
+
+</odoo>

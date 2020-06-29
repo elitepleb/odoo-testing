@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record model="ir.ui.view" id="workplan_plan_form">
+		<field name="name">workplan.form.plan</field>
+		<field name="model">workplan.plan</field>
+		<field name="arch" type="xml">
+			<form string="Darbo planas">
+				<header>
+					<field name="state" widget="statusbar" clickable = "True"/>
+				</header>
+				<sheet>
+					<group>
+						<field name="name" />
+					</group>
+					<group>
+						<field name="work_ids" />
+						<field name="leader_id" />
+					</group>
+					<group>
+						<field name="last_modification" />
+						<field name="finish" />
+					</group>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"/>
+						<field name="message_ids" widget="mail_thread"/>
+					</div>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="workplan_plan_kanban">
+		<field name="name">workplan.kanban.plan</field>
+		<field name="model">workplan.plan</field>
+		<field name="arch" type="xml">
+			<kanban class="o_kanban_small_column">
+				<field name="work_ids"/>
+				<templates>
+					<t t-name="kanban-box">
+						<div class="oe_kanban_card oe_kanban_global_click">
+							<div class="oe_kanban_content">
+								<div>
+									<strong class="o_kanban_record_title"><field name="name"/></strong>
+								</div>
+								<div class="text-muted o_kanban_record_subtitle">
+									<field name="work_ids"/>
+									<strong>padaryti iki <field name="finish"/></strong>
+								</div>
+							</div>
+							<div class="oe_clear"></div>
+						</div>
+					</t>
+				</templates>
+			</kanban>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="workplan_plan_view_search">
+		<field name="name">workplan.order.view.search</field>
+		<field name="model">workplan.plan</field>
+		<field name="arch" type="xml">
+			<search string="Planų paieška">
+				<field name="work_ids" string="Darbai"/>
+				<field name="state"/>
+				<filter string="Planuojamas" name="planning" domain="[('state', '=', 'planning')]"/>
+				<filter string="Daromas" name="doing" domain="[('state', '=', 'doing')]"/>
+				<filter string="Padarytas" name="done" domain="[('state', '=', 'done')]"/>
+				<separator />
+				<group expand="0" string="Group By">
+					<filter string="Stadija" name="group_by_state" domain="[]" context="{'group_by':'state'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+</odoo>

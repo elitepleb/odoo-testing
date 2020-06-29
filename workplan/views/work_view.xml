@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record model="ir.ui.view" id="workplan_work_form">
+		<field name="name">workplan.form.work</field>
+		<field name="model">workplan.work</field>
+		<field name="arch" type="xml">
+			<form string="Darbas">
+				<sheet>
+					<h1>
+						<field name="name" placeholder="Užduotis"/>
+					</h1>
+					<group>
+						<field name="info"/>
+					</group>
+					<group>
+						<field name="worker_id" />
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+</odoo>
